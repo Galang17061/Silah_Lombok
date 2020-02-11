@@ -1,0 +1,10 @@
+.custom-sticky {
+    position: absolute;
+}
+
+.customSticky {
+    position: fixed;
+    top: -70px;
+    transform: translateY(70px);
+    transition: transform .5s ease;
+}

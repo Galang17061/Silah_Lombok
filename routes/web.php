@@ -11,6 +11,10 @@
 |
  */
 
+Route::get('/welcome', function () {
+    return view('welcome');
+})->name('welcome');
+
 Route::get('/', function () {
     return view('index');
 })->name('index');
@@ -24,3 +28,7 @@ Route::get('/detail_package', function () {
     return view('detail_package');
 })->name('detail_package');
 // End Package
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

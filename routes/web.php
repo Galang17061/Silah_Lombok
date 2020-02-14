@@ -19,6 +19,8 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
+Route::get('/login', 'Auth/LoginController@index')->name('login');
+
 // Package
 Route::get('/package_list', function () {
     return view('frontend/package_list/package_list');

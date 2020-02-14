@@ -172,21 +172,17 @@
                 {{-- End table --}}
             </div>
             <div class="col-md-4 sidebar">
-                {{-- <div class="sidebar-box">
-                    <img src="../assets_frontend/images/person_4_sq.jpg" alt="Image placeholder" class="img-fluid mb-4">
-                    <h3 class="text-black">About The Author</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus
-                        voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur
-                        similique, inventore eos fugit cupiditate numquam!</p>
-                    <p><a href="#" class="btn btn-primary btn-sm px-5 rounded-0">Read More</a></p>
+                <div class="row">
+                    <div class="col-md-4">day 1</div>
+                    <div class="col-md-4">day 2</div>
+                    <div class="col-md-4">day 3</div>
                 </div>
-
-                <div class="sidebar-box">
-                    <h3 class="text-black">Paragraph</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus
-                        voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur
-                        similique, inventore eos fugit cupiditate numquam!</p>
-                </div> --}}
+                <div class="row pt-4" style="display: block">
+                    <p>Pick up at airport</p>
+                    <p>Sukarare</p>
+                    <p>Lunch at kute</p>
+                </div>
+                <div class="row">s</div>
             </div>
         </div>
     </div>

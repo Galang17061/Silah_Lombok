@@ -21,11 +21,11 @@ Route::get('/', function () {
 
 // Package
 Route::get('/package_list', function () {
-    return view('package_list');
+    return view('frontend/package_list/package_list');
 })->name('package_list');
 
 Route::get('/detail_package', function () {
-    return view('detail_package');
+    return view('frontend/detail_package/detail_package');
 })->name('detail_package');
 // End Package
 

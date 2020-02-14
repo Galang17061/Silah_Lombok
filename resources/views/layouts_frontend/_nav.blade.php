@@ -8,7 +8,7 @@
 
         <ul class="navbar-nav mr-auto">
         </ul>
-        <ul class="navbar-nav">
+        <ul class="navbar-nav" style="position: relative; right: 100px">
             <li class="nav-item active">
                 <a class="nav-link" href="{{route('index')}}">Home<span class="sr-only">(current)</span></a>
             </li>

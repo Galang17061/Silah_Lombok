@@ -13,3 +13,5 @@
 <link href="{{asset('../assets_backend/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
 <!-- App Css-->
 <link href="{{asset('../assets_backend/css/app.min.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('../node_modules/dropify/dist/css/dropify.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('../assets_backend/libs/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />

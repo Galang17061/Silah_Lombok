@@ -35,28 +35,28 @@
                                 <div class="form-group row">
                                     <label for="example-text-input" class="col-md-2 col-form-label">Nama</label>
                                     <div class="col-md-10">
-                                        <input class="form-control" type="text" name="name" value=""
+                                        <input class="form-control" type="text" name="name" value="{{ $data->name }}"
                                             id="example-text-input">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="example-search-input" class="col-md-2 col-form-label">Username</label>
                                     <div class="col-md-10">
-                                        <input class="form-control" type="search" name="username" value=""
+                                        <input class="form-control" type="search" name="username" value="{{ $data->username }}"
                                             id="example-search-input">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="example-email-input" class="col-md-2 col-form-label">Email</label>
                                     <div class="col-md-10">
-                                        <input class="form-control" type="email" name="email" value=""
+                                        <input class="form-control" type="email" name="email" value="{{ $data->email }}"
                                             id="example-email-input">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="example-url-input" class="col-md-2 col-form-label">Password</label>
                                     <div class="col-md-10">
-                                        <input class="form-control" type="password" name="password" value=""
+                                        <input class="form-control" type="password" name="password" value="{{ $data->password }}"
                                             id="example-url-input">
                                     </div>
                                 </div>
@@ -111,7 +111,7 @@
         }).then((result) => {
             $.ajax({
                 type: "post",
-                url:"{{ route('user_save') }}",
+                url:"{{ route('user_update') }}",
                 data: formdata ? formdata : form.serialize(),
                 processData: false,
                 contentType: false,

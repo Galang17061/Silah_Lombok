@@ -18,3 +18,4 @@
 
 <link rel="stylesheet" href="{{asset('../assets_frontend/css/style.css')}}">
 <link rel="stylesheet" href="{{asset('../assets_frontend/css/customSticky.css')}}">
+<link href="{{asset('../assets/libs/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />

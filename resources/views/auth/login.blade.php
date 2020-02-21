@@ -42,17 +42,26 @@
                             <div class="card-body p-4">
                                 <div class="p-2">
                                     <h5 class="mb-5 text-center">Sign in to continue to Xoric.</h5>
-                                    <form class="form-horizontal" action="index.html">
-
+                                    <form class="form-horizontal" 
+                                    method="get" action="{{ route('login') }}">
+                                    @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group form-group-custom mb-4">
-                                                    <input type="text" class="form-control" id="username" required>
+                                                    <input type="text" class="form-control" name="username" id="username" required>
                                                     <label for="username">User Name</label>
                                                 </div>
 
                                                 <div class="form-group form-group-custom mb-4">
-                                                    <input type="password" class="form-control" id="userpassword" required>
+                                                    <input type="password" name="password" class="form-control" id="userpassword" required>
                                                     <label for="userpassword">Password</label>
                                                 </div>
 
@@ -73,7 +82,7 @@
                                                     <button class="btn btn-success btn-block waves-effect waves-light" type="submit">Log In</button>
                                                 </div>
                                                 <div class="mt-4 text-center">
-                                                    <a href="auth-register.html" class="text-muted"><i class="mdi mdi-account-circle mr-1"></i> Create an account</a>
+                                                    <a href="{{asset('register')}}" class="text-muted"><i class="mdi mdi-account-circle mr-1"></i> Create an account</a>
                                                 </div>
                                             </div>
                                         </div>

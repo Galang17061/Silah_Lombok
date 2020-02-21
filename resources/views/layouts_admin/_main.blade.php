@@ -11,7 +11,7 @@
         @yield('extra_style')
     </head>
 
-    <body class="colored">
+    <body data-topbar="colored">
         <div class="layout-wrapper">
             @include('layouts_admin._nav')
             @include('layouts_admin._side')

@@ -22,22 +22,22 @@
                         <span>Category</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#">Package Category</a></li>
-                        <li><a href="email-read.html">Tour Category</a></li>
+                        <li><a href="{{route('category_package')}}">Package Category</a></li>
+                        <li><a href="{{route('category_tour')}}">Tour Category</a></li>
                     </ul>
                 </li>
 
                 <li class="menu-title">Main</li>
 
                 <li>
-                    <a href="#" class=" waves-effect">
+                    <a href="{{route('package_list')}}" class=" waves-effect">
                         <div class="d-inline-block icons-sm mr-1"><i class="uim uim-schedule"></i></div>
                         <span>Package List</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="calendar.html" class=" waves-effect">
+                    <a href="{{route('package_detail')}}" class=" waves-effect">
                         <div class="d-inline-block icons-sm mr-1"><i class="uim uim-schedule"></i></div>
                         <span>Detail Package</span>
                     </a>

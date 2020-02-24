@@ -59,9 +59,10 @@ class UserController extends Controller
             // something went wrong
         }
     }
-    public function user_edit()
+    public function user_edit(Request $req)
     {
-
+        $data = $this->model->User()->where('id',$req->id)->get();
+        return view('admin.master.user.user', compact('data'));
     }
     public function user_update()
     {

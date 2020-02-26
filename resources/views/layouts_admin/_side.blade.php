@@ -30,20 +30,11 @@
                 <li class="menu-title">Main</li>
 
                 <li>
-                    <a href="{{route('package_list')}}" class=" waves-effect">
+                    <a href="{{route('package')}}" class=" waves-effect">
                         <div class="d-inline-block icons-sm mr-1"><i class="uim uim-schedule"></i></div>
-                        <span>Package List</span>
+                        <span>Package</span>
                     </a>
                 </li>
-
-                <li>
-                    <a href="{{route('package_detail')}}" class=" waves-effect">
-                        <div class="d-inline-block icons-sm mr-1"><i class="uim uim-schedule"></i></div>
-                        <span>Detail Package</span>
-                    </a>
-                </li>
-
-
             </ul>
 
         </div>

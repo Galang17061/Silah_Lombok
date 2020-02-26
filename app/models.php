@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\model\functions\d_package_detail;
+use App\model\functions\d_package;
 use App\model\functions\d_package_image;
 use App\model\functions\d_package_rundown;
 use App\model\functions\d_package_rundown_detail;
@@ -20,10 +20,10 @@ class models extends model
         return $User;
     }
 
-    public function d_package_detail()
+    public function d_package()
     {
-        $d_package_detail = new d_package_detail;
-        return $d_package_detail;
+        $d_package = new d_package;
+        return $d_package;
     }
 
     public function d_package_image()

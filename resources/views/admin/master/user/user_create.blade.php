@@ -61,7 +61,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="example-url-input" class="col-md-2 col-form-label">Password</label>
+                                    <label for="example-url-input" class="col-md-2 col-form-label">Gambar</label>
                                     <div class="col-md-10">
                                         <input type="file" class="dropify image" name="image"/>
                                     </div>

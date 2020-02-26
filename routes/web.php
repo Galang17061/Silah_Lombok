@@ -42,38 +42,19 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/master/user', 'admin\master\userController@user')->name('user');
 Route::get('/master/user/create', 'admin\master\userController@user_create')->name('user_create');
 Route::post('/master/user/save', 'admin\master\userController@user_save')->name('user_save');
-Route::post('/master/user/edit', 'admin\master\userController@user_edit')->name('user_edit');
+Route::get('/master/user/edit', 'admin\master\userController@user_edit')->name('user_edit');
 Route::post('/master/user/update', 'admin\master\userController@user_update')->name('user_update');
 Route::get('/master/user/delete', 'admin\master\userController@user_delete')->name('user_delete');
-Route::get('/master/user/datatable', 'admin\master\userController@user_datatable')->name('user_datatable');
+// Route::get('/master/user/datatable', 'admin\master\userController@user_datatable')->name('user_datatable');
 
 // Package Detail
-Route::get('/main/package_detail', 'admin\main\package_detail\package_detailController@package_detail')->name('package_detail');
-Route::post('/main/package_detail/save', 'admin\main\package_detail\package_detailController@package_detail_save')->name('package_detail_save');
-Route::post('/main/package_detail/update', 'admin\main\package_detail\package_detailController@package_detail_update')->name('package_detail_update');
-Route::get('/main/package_detail/delete', 'admin\main\package_detail\package_detailController@package_detail_delete')->name('package_detail_delete');
-Route::get('/main/package_detail/datatable', 'admin\main\package_detail\package_detailController@package_detail_datatable')->name('package_detail_datatable');
-
-// Package Image
-Route::get('/main/package_image', 'admin\main\package_image\package_imageController@package_image')->name('package_image');
-Route::post('/main/package_image/save', 'admin\main\package_image\package_imageController@package_image_save')->name('package_image_save');
-Route::post('/main/package_image/update', 'admin\main\package_image\package_imageController@package_image_update')->name('package_image_update');
-Route::get('/main/package_image/delete', 'admin\main\package_image\package_imageController@package_image_delete')->name('package_image_delete');
-Route::get('/main/package_image/datatable', 'admin\main\package_image\package_imageController@package_image_datatable')->name('package_image_datatable');
-
-// Package Rundown
-Route::get('/main/package_rundown', 'admin\main\package_rundown\package_rundownController@package_rundown')->name('package_rundown');
-Route::post('/main/package_rundown/save', 'admin\main\package_rundown\package_rundownController@package_rundown_save')->name('package_rundown_save');
-Route::post('/main/package_rundown/update', 'admin\main\package_rundown\package_rundownController@package_rundown_update')->name('package_rundown_update');
-Route::get('/main/package_rundown/delete', 'admin\main\package_rundown\package_rundownController@package_rundown_delete')->name('package_rundown_delete');
-Route::get('/main/package_rundown/datatable', 'admin\main\package_rundown\package_rundownController@package_rundown_datatable')->name('package_rundown_datatable');
-
-// Package Rundown Detail
-Route::get('/main/package_rundown_detail', 'admin\main\package_rundown_detail\package_rundown_detailController@package_rundown_detail')->name('package_rundown_detail');
-Route::post('/main/package_rundown_detail/save', 'admin\main\package_rundown_detail\package_rundown_detailController@package_rundown_detail_save')->name('package_rundown_detail_save');
-Route::post('/main/package_rundown_detail/update', 'admin\main\package_rundown_detail\package_rundown_detailController@package_rundown_detail_update')->name('package_rundown_detail_update');
-Route::get('/main/package_rundown_detail/delete', 'admin\main\package_rundown_detail\package_rundown_detailController@package_rundown_detail_delete')->name('package_rundown_detail_delete');
-Route::get('/main/package_rundown_detail/datatable', 'admin\main\package_rundown_detail\package_rundown_detailController@package_rundown_detail_datatable')->name('package_rundown_detail_datatable');
+Route::get('/main/package', 'admin\main\package\packageController@package')->name('package');
+Route::get('/main/package/create', 'admin\main\package\packageController@package_create')->name('package_create');
+Route::post('/main/package/save', 'admin\main\package\packageController@package_save')->name('package_save');
+Route::get('/main/package/edit', 'admin\main\package\packageController@package_edit')->name('package_edit');
+Route::post('/main/package/update', 'admin\main\package\packageController@package_update')->name('package_update');
+Route::get('/main/package/delete', 'admin\main\package\packageController@package_delete')->name('package_delete');
+Route::get('/main/package/datatable', 'admin\main\package\packageController@package_datatable')->name('package_datatable');
 
 // Category Package
 Route::get('/master/category_package', 'admin\master\category_package\category_packageController@category_package')->name('category_package');

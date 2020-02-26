@@ -65,7 +65,7 @@ class UserController extends Controller
     }
     public function user_update()
     {
-
+        // $id = $this->model->User()->max('id')+1;
     }
     public function user_delete()
     {

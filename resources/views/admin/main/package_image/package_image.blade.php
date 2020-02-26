@@ -25,7 +25,7 @@
                                     <i class="mdi mdi-settings-outline mr-1"></i> Settings
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated">
-                                    <a class="dropdown-item" href="{{ route('category_tour_create') }}"><i class="fas fa-plus"></i>   Create</a>
+                                    <a class="dropdown-item" href="{{ route('package_image_create') }}"><i class="fas fa-plus"></i>   Create</a>
                                 </div>
                             </div>
                         </div>
@@ -48,8 +48,8 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama</th>
-                                            <th>Action</th>
+                                            <th>Package</th>
+                                            <th>Image</th>
                                         </tr>
                                     </thead>
 
@@ -60,7 +60,10 @@
                                         <tr>
                                             <td>{{$index+1}}</td>
                                             <td>
-                                                {{$element->mct_title}}
+                                                {{$element->dpi_package}}
+                                            </td>
+                                            <td>
+                                                {{$element->dpi_image}}
                                             </td>
                                             <td>
                                                 <button class="btn btn-sm btn-warning"> Edit</button>

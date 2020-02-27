@@ -14,3 +14,7 @@
 <script src="{{asset('../assets_frontend/js/customSticky.js')}}"></script>
 <script src="{{asset('../assets_frontend/js/jquery.mb.YTPlayer.min.js')}}"></script>
 <script src="{{asset('../assets_frontend/js/main.js')}}"></script>
+
+<script type="text/javascript">
+
+</script>

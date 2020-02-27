@@ -59,16 +59,64 @@ class UserController extends Controller
             // something went wrong
         }
     }
-    public function user_edit()
+    public function user_edit(Request $req)
     {
-
+        $data = $this->model->User()->where('id',$req->id)->first();
+        return view('admin.master.user.user_edit', compact('data'));
     }
-    public function user_update()
+    public function user_update(Request $req)
     {
-        // $id = $this->model->User()->max('id')+1;
+        DB::beginTransaction();
+        try {
+            $cek_data_user = $this->model->User()->where('id',$req->id)->first();
+            if ($req->username != $cek_data_user->username) {
+                $cek_username   = $this->model->User()->where('username',$req->username)->count();
+                if ($cek_username > 0) {
+                    return Response()->json(['status'=>'username_terpakai']);
+                }
+            }
+            
+            $file = $req->file('image');
+            if ($file != null) {
+                $photo = 'user/user_image_'.$cek_data_user->id.'.jpg';
+                Storage::put($photo,file_get_contents($req->file('image')));
+            }else{
+                $photo = $cek_data_user->image;
+            }
+            if ($req->password == null) {
+                $password = $cek_data_user->password;
+            }else{
+                $password = sha1(md5('لا إله إلاّ الله') . $req->password);
+            }
+            $simpan = $this->model->User()->where('id',$req->id)->update([
+                'username'=>$req->username,
+                'email'=>$req->email,
+                'name'=>$req->name,
+                'image'=>$photo,
+                'password'=>$password,
+                'created_at'=>date('Y-m-d h:i:s'),
+            ]);
+            DB::commit();
+            return Response()->json(['status'=>'sukses']);
+        } catch (\Exception $e) {
+            DB::rollback();
+            return Response()->json(['status'=>'gagal','problem'=>$e]);
+            // something went wrong
+        }
     }
-    public function user_delete()
+    public function user_delete(Request $req)
     {
+        DB::beginTransaction();
+        try {
+            $cek_data_user = $this->model->User()->where('id',$req->id)->first();
+            $delete = $this->model->User()->where('id',$req->id)->delete();
+            Storage::delete($cek_data_user->image);
+            DB::commit();
+            return Response()->json(['status'=>'sukses']);
+        }catch (\Exception $e) {
+            DB::rollback();
+            return Response()->json(['status'=>'gagal','problem'=>$e]);
+        }
 
     }
     public function user_datatable()

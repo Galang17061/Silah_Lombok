@@ -44,3 +44,9 @@
 <script src="{{asset('../assets_backend/js/pages/datatables.init.js')}}"></script>
 <script src="{{asset('../assets_backend/libs/sweetalert2/sweetalert2.min.js')}}"></script>
 <script src="{{ asset('../node_modules/dropify/dist/js/dropify.js') }}"></script>
+
+<script type="text/javascript">
+	
+	var baseUrl = '{{ url('/') }}';
+
+</script>

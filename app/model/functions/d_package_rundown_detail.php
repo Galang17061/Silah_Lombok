@@ -17,7 +17,7 @@ class d_package_rundown_detail extends model
         'dprd_id',
         'dprd_dt',
         'dprd_package',
-        'dprd_schedule',
+        'dprd_schedulle',
     ];
 
     public function getDateFormat()

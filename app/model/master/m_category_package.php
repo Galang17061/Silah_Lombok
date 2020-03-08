@@ -16,6 +16,7 @@ class m_category_package extends model
     protected $fillable = [
         'mcp_id',
         'mcp_title',
+        'mcp_description',
     ];
 
     public function getDateFormat()

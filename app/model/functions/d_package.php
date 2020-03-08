@@ -17,6 +17,7 @@ class d_package extends model
         'dp_id',
         'dp_title',
         'dp_description',
+        'dp_category',
         'dp_price_include',
         'dp_price_exclude',
         'dp_created_by',

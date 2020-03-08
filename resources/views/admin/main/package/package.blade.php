@@ -55,7 +55,7 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Nama</th>
-                                            <th>packagename</th>
+                                            <th>category</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -63,21 +63,22 @@
 
                                     <tbody>
 
-                                        {{-- @foreach($data as $index => $element)
+                                        @foreach($data as $index => $element)
                                         <tr>
                                             <td>{{$index+1}}</td>
                                             <td>
-                                                {{$element->name}}
+                                                {{$element->dp_title}}
                                             </td>
                                             <td>
-                                                {{$element->packagename}}
+                                                {{$element->m_category_package->mcp_title}}
                                             </td>
                                             <td>
-                                                <button class="btn btn-sm btn-warning" onclick="edit({{ $element->id }})"> Edit</button>
-                                                <button class="btn btn-sm btn-danger" onclick="deleted({{ $element->id }})"> Delete</button>
+                                                <button class="btn btn-sm btn-warning" onclick="edit({{ $element->dp_id }})"> Edit</button>
+                                                <button class="btn btn-sm btn-danger" onclick="deleted({{ $element->dp_id }})"> Delete</button>
+                                                
                                             </td>
                                         </tr>
-                                        @endforeach --}}
+                                        @endforeach
 
                                     </tbody>
                                 </table>

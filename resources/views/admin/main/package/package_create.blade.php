@@ -74,6 +74,17 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
+                                            <label for="example-text-input" class="col-md-2 col-form-label">Category</label>
+                                            <div class="col-md-10">
+                                                <select class="form-control" name="category">
+                                                    <option>- Chose Category -</option>
+                                                    @foreach ($category as $element)
+                                                        <option value="{{ $element->mcp_id }}">{{ $element->mcp_title }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
                                             <label for="example-text-input" class="col-md-2 col-form-label">Description</label>
                                             <div class="col-md-10">
                                                 <textarea class="form-control" name="description"></textarea>

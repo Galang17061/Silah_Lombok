@@ -16,6 +16,7 @@ class d_package_rundown extends model
     protected $fillable = [
         'dpr_id',
         'dpr_package',
+        'dpr_package',
         'dpr_day',
     ];
 

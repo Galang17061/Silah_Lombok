@@ -128,7 +128,14 @@
                                     </div>
                                     {{-- TAB KE 4 --}}
                                     <div class="tab-pane active" id="price_table" role="tabpanel">
-                                        
+                                       <button type="button" onclick="add_hotel()" class="btn btn-sm btn-info"><i class="fa fa-plus"></i> &nbsp;Add Hotel</button>
+                                       <button type="button" onclick="add_person()" class="btn btn-sm btn-warning"><i class="fa fa-plus"></i> &nbsp;Add Person</button>
+                                       <div style="margin-top: 30px;" class="drop_person col-sm-offset-1 row col-md-12 form-inline">
+                                           
+                                       </div>
+                                       <div style="margin-top: 30px" class="drop_hotel col-md-12">
+                                           
+                                       </div>
                                     </div>
                                 </div>
                               </form>
@@ -229,9 +236,58 @@
         order_day();
     }
     function remove_activity(argument) {
-      // $('.activity_remove').each(function(index){
         $('.activity_remove_'+argument).remove();
-      // });
+    }
+    function remove_person(argument) {
+        $('.person_remove_'+argument).remove();
+        // order_person();
+    }
+    function add_person(argument) {
+      var index = $('.person').length+1;
+      var index_value = $('.person').length;
+      if (index_value == 5) {
+        Swal.fire('Warning!','telah Mencapa data maximal.','warning')
+      }else{
+        $('.drop_person').append(
+            '<input type="hidden" class="form-control person_value person_remove_'+index_value+'" name="person[]" value="'+index_value+'">'+
+            '<input type="text" style="margin-bottom:10px;margin-left: 5px" class="col-md-2  form-control person person_remove_'+index_value+' person person_'+index_value+'" placeholder="person range '+index+'" name="person_'+index_value+'[]">'+
+            '<button class="btn btn-sm btn-danger person_remove_'+index_value+'" style="margin-bottom:10px;margin-left: 5px;" type="button" onclick="remove_person(\'' + index_value + '\')"><i class="fas fa-times"></i>  </button>'
+
+        );
+      }
+      console.log(index_value);
+      console.log(index);
+    }
+    function order_person() {
+      var day_total = $('.person').length+1;
+      $('.person_value').each(function(index){
+        $(this).val((index));
+      });
+    }
+    function add_hotel(argument) {
+      var index = $('.hotel').length+1;
+      var index_value = $('.hotel').length;
+      var total_person = $('.person').length;
+
+      // console.log(index);
+      // console.log(index_value);
+      var hotel_price = [];
+      for (var i = 0; i < total_person; i++) {
+          hotel_price += 
+          '<div class="drop_here_hotel_price_'+index_value+' col-sm-2">'+
+                '<input type="text" style="margin-bottom:10px" class=" form-control hotel_price hotel_price_remove_'+index_value+' hotel_price_remove_'+index_value+'_'+i+' hotel_price_'+index_value+' hotel_price_'+index_value+'_'+i+'" placeholder="Harga ke '+index+'" name="hotel_price_'+index_value+'[]">'+
+          '</div>';
+      }
+      // console.log(hotel_price);
+        $('.drop_hotel').append(
+            '<div class="form-group row">'+
+                    '<div class="col-sm-2">'+
+                        '<select style="margin-bottom:10px" class="form-control hotel hotel_remove_'+index_value+' hotel_'+index_value+'" placeholder="Hotel ke '+index+'" name="hotel_'+index_value+'[]">'+
+                            '<option>- Pilih Hotel -</option>'+
+                        '</select>'+
+                    '</div>'+
+                    hotel_price+
+            '</div>');
     }
 
 </script>

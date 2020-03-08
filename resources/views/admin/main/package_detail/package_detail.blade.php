@@ -25,7 +25,7 @@
                                     <i class="mdi mdi-settings-outline mr-1"></i> Settings
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated">
-                                    <a class="dropdown-item" href="{{ route('category_package_create') }}"><i class="fas fa-plus"></i>   Create</a>
+                                    <a class="dropdown-item" href="{{ route('package_detail_create') }}"><i class="fas fa-plus"></i>   Create</a>
                                 </div>
                             </div>
                         </div>
@@ -49,7 +49,11 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Nama</th>
-                                            <th>Action</th>
+                                            <th>Deskripsi</th>
+                                            <th>Price Include</th>
+                                            <th>Price Exclude</th>
+                                            <th>Created By</th>
+                                            <th>Updated By</th>
                                         </tr>
                                     </thead>
 
@@ -60,12 +64,26 @@
                                         <tr>
                                             <td>{{$index+1}}</td>
                                             <td>
-                                                {{$element->mcp_title}}
+                                                {{$element->dpd_title}}
                                             </td>
                                             <td>
-                                                <button class="btn btn-sm btn-warning" onclick="edit({{$element->mcp_id}})"> Edit</button>
-                                                <button class="btn btn-sm btn-danger" onclick="deleted({{$element->mcp_id}})"> Delete</button>
-                                                
+                                                {{$element->dpd_description}}
+                                            </td>
+                                            <td>
+                                                {{$element->dpd_price_include}}
+                                            </td>
+                                            <td>
+                                                {{$element->dpd_price_exclude}}
+                                            </td>
+                                            <td>
+                                                {{$element->dpd_created_by}}
+                                            </td>
+                                            <td>
+                                                {{$element->dpd_updated_by}}
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-sm btn-warning"> Edit</button>
+                                                <button class="btn btn-sm btn-danger"> Delete</button>
                                             </td>
                                         </tr>
                                         @endforeach
@@ -91,39 +109,8 @@
 @endsection
 
 @section('extra_script')
-<script type="text/javascript">
+<script>
     $('#datatable').dataTable();
-
-    function edit(argument){
-    window.location.href= baseUrl+'/master/category_package/edit?&id='+argument;
-}
-
-    function deleted(argument) {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, Delete!'
-        }).then((result) => {
-            $.ajax({
-                type: "get",
-                url:"{{ route('category_package_delete') }}",
-                data: {'id':argument},
-                success:function(data){
-                    if (data.status == 'sukses') {
-                        if (result.value) {Swal.fire('Deleted!','Your file has been Deleted.','success')}
-                            location.reload();
-                    }else if(data.status == 'gagal'){
-                        if (result.value) {Swal.fire('Fail!','your file could not be Deleted','error')}
-                    }
-                }
-            });
-            
-        })
-    }
 
 </script>
 @endsection

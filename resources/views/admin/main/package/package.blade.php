@@ -62,8 +62,8 @@
 
 
                                     <tbody>
-{{-- 
-                                        @foreach($data as $index => $element)
+
+                                        {{-- @foreach($data as $index => $element)
                                         <tr>
                                             <td>{{$index+1}}</td>
                                             <td>

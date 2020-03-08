@@ -64,6 +64,7 @@ class UserController extends Controller
         $data = $this->model->User()->where('id',$req->id)->first();
         return view('admin.master.user.user_edit', compact('data'));
     }
+
     public function user_update(Request $req)
     {
         DB::beginTransaction();
@@ -104,6 +105,7 @@ class UserController extends Controller
             // something went wrong
         }
     }
+    
     public function user_delete(Request $req)
     {
         DB::beginTransaction();

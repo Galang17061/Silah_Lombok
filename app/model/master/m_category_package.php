@@ -22,9 +22,8 @@ class m_category_package extends model
     {
         return 'Y-m-d H:i:s';
     }
-    // public function d_shop_image()
-    // {
-    //     return $this->hasMany('App\model\functions\shop\d_shop_image', 'dsi_shop', 'ds_id');
-    // }
+    public function d_package(){
+        return $this->hasMany('App\model\functions\d_package','dp_id','mcp_id');
+    }
 
 }

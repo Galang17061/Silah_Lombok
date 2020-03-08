@@ -22,6 +22,9 @@ class m_category_tour extends model
     {
         return 'Y-m-d H:i:s';
     }
+
+    
+
     // public function d_shop_image()
     // {
     //     return $this->hasMany('App\model\functions\shop\d_shop_image', 'dsi_shop', 'ds_id');

@@ -84,7 +84,7 @@
         }).then((result) => {
             $.ajax({
                 type: "post",
-                url:"{{ route('beasiswa_detail_save') }}",
+                url:"{{ route('category_tour_save') }}",
                 data: formdata ? formdata : form.serialize(),
                 processData: false,
                 contentType: false,

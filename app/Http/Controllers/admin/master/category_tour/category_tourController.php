@@ -21,10 +21,23 @@ class category_tourController extends Controller
         $data = $this->model->m_category_tour()->get();
         return view('admin.master.category_tour.category_tour', compact('data'));
     }
+
     public function category_tour_create()
     {
         return view('admin.master.category_tour.category_tour_create');
     }
+
+    public function category_tour_edit(Request $req)
+    {
+        // return $req->all();
+        $data = $this->model->m_category_tour()->where('mct_id',$req->id)->get()->first();
+        return view('admin.master.category_tour.category_tour_edit',compact('data'));
+    }
+
+    public function tes(Request $req){
+        return $req->all();
+    }
+
     public function category_tour_save(Request $req)
     {
     DB::beginTransaction();
@@ -45,16 +58,39 @@ class category_tourController extends Controller
             return Response()->json(['status'=>'gagal']);
         }
     }
-    public function category_tour_update()
+
+    public function category_tour_update(Request $req)
     {
-        return ('c');
+        DB::beginTransaction();
+        try {
+            $simpan = $this->model->m_category_tour()->where('mct_id',$req->id)->update([
+                'mct_title'=>$req->mct_title
+            ]);
+            DB::commit();
+            return Response()->json(['status'=>'sukses']);
+        } catch (\Exception $e) {
+            DB::rollback();
+            return Response()->json(['status'=>'gagal','problem'=>$e]);
+            // something went wrong
+        }
     }
-    public function category_tour_delete()
+
+    public function category_tour_delete(Request $req)
     {
-        return ('D');
+        DB::beginTransaction();
+        try {
+            $delete = $this->model->m_category_tour()->where('mct_id',$req->id)->delete();
+            DB::commit();
+            return Response()->json(['status'=>'sukses']);
+        }catch (\Exception $e) {
+            DB::rollback();
+            return Response()->json(['status'=>'gagal','problem'=>$e]);
+        }
     }
+
     public function category_tour_datatable()
     {
         return ('e');
     }
+
 }

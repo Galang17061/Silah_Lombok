@@ -14,128 +14,21 @@
 
 
 
-    <div class="hero-slide owl-carousel site-blocks-cover">
+    <div class="hero-slidesite-blocks-cover">
         <div class="intro-section" style="background-image: url('../assets_frontend/images/hero_1.jpg');">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-7 ml-auto text-right" data-aos="fade-up">
-                        <h1>Explore, Discover The Ocean</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, in distinctio
-                            nostrum laborum sed quisquam voluptate facilis non.</p>
-                        <p><a href="{{route('package_list')}}" class="btn btn-primary py-3 px-5">Read More</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="intro-section" style="background-image: url('../assets_frontend/images/hero_2.jpg');">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-7 mx-auto text-center" data-aos="fade-up">
-                        <h1>Enjoy The Ocean With Your Family</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, in distinctio
-                            nostrum laborum sed quisquam voluptate facilis non.</p>
-                        <p><a href="{{route('package_list')}}" class="btn btn-primary py-3 px-5">Read More</a></p>
+                    <div class="col-lg-7 text-left" data-aos="fade-up">
+                        <h1 style="font-size: 5rem">enjoy your</h1>
+                        <h1 style="font-size: 5rem">holiday.</h1>
+                        <p style="font-size: 2.1rem">with us</p>
+                        <p><a href="{{route('package_list')}}" class="btn btn-primary py-3 px-5">See Our Package</a></p>
                     </div>
                 </div>
             </div>
         </div>
 
     </div>
-    <!-- END slider -->
-
-    {{-- <div class="site-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="../assets_frontend/images/hero_2.jpg" alt="Image" class="img-fluid">
-                </div>
-                <div class="col-md-6">
-                    <span class="text-serif text-primary">About Us</span>
-                    <h3 class="heading-92913 text-black">Welcome To Our Website</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, illum, quasi. Odit velit
-                        deserunt eligendi unde, enim. Enim fugiat.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium eius ullam impedit
-                        architecto debitis facilis!</p>
-                    <p><a href="#" class="btn btn-primary py-3 px-4">Learn More</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-29283">
-                        <span class="wrap-icon-39293">
-                            <span class="flaticon-yacht"></span>
-                        </span>
-                        <h3>Luxuries Yacht</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ipsa, ad
-                            ratione quos distinctio unde.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-29283">
-                        <span class="wrap-icon-39293">
-                            <span class="flaticon-shield"></span>
-                        </span>
-                        <h3>30 Years of Experience</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ipsa, ad
-                            ratione quos distinctio unde.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-29283">
-                        <span class="wrap-icon-39293">
-                            <span class="flaticon-captain"></span>
-                        </span>
-                        <h3>Good Captain</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ipsa, ad
-                            ratione quos distinctio unde.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-
-    {{-- <div class="site-section bg-image overlay" style="background-image: url('../assets_frontend/images/hero_1.jpg');">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="counter-39392">
-                        <h3>349</h3>
-                        <span>Number of Yacht</span>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="counter-39392">
-                        <h3>7000+</h3>
-                        <span>Customers Satisfied</span>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="counter-39392">
-                        <h3>120</h3>
-                        <span>Number of Staffs</span>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="counter-39392">
-                        <h3>493</h3>
-                        <span>Sea Destinations</span>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="counter-39392">
-                        <h3>230</h3>
-                        <span>Professional Sailors</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
 
     <div class="site-section bg-light" id="site1">
         <div class="container">
@@ -533,10 +426,19 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container pt-5 pb-5">
         <div class="row">
-            <div class="col-md-8 blog-content custom-blog">
-                <p class="custom-cv">Why CV Silah Lombok <br> Tour and Travel</p>
+            <div class="col-md-4 blog-content custom-blog">
+                <p class="custom-cv" style="font-weight: 700;color:black">Why CV Silah Lombok <br> Tour and Travel</p>
+                <p style="font-weight: 400">reason to choose us.</p>
+            </div>
+            <div class="col-md-4">
+                <h2>Trusted</h2>
+                <h2>Comfortable</h2>
+            </div>
+            <div class="col-md-3">
+                <h2>Professional</h2>
+                <h2>High satisfactory</h2>
             </div>
             {{-- <div class="col-md-4 sidebar">
                 <div class="sidebar-box">

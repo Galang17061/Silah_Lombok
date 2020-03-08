@@ -29,10 +29,11 @@ class d_package extends model
     {
         return 'Y-m-d H:i:s';
     }
-    // public function d_shop_image()
-    // {
-    //     return $this->hasMany('App\model\functions\shop\d_shop_image', 'dsi_shop', 'ds_id');
-    // }
+    
+    public function m_category_package(){
+        return $this->belongsTo('App\model\master\m_category_package','dp_id','mcp_id');
+    }
+
     public static function boot()
     {
         parent::boot();

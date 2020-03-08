@@ -63,10 +63,8 @@
                                                 {{$element->mcp_title}}
                                             </td>
                                             <td>
-                                            <a href="{{ url('/master/category_package/edit/'.$element->mcp_id) }}">
-                                                <button class="btn btn-sm btn-warning"> Edit</button>
-                                            </a>
-                                                <button class="btn btn-sm btn-danger" onclick="delete()"> Delete</button>
+                                                <button class="btn btn-sm btn-warning" onclick="edit({{$element->mcp_id}})"> Edit</button>
+                                                <button class="btn btn-sm btn-danger" onclick="deleted({{$element->mcp_id}})"> Delete</button>
                                                 
                                             </td>
                                         </tr>
@@ -93,17 +91,14 @@
 @endsection
 
 @section('extra_script')
-<script>
+<script type="text/javascript">
     $('#datatable').dataTable();
 
-    function delete(argument) {
-        var form   = $('.form_save');
-        formdata = new FormData(form[0]);
-        $.ajaxSetup({
-           headers: {
-             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-           }
-        });
+    function edit(argument){
+    window.location.href= baseUrl+'/master/category_package/edit?&id='+argument;
+}
+
+    function deleted(argument) {
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -111,25 +106,23 @@
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, Save!'
+            confirmButtonText: 'Yes, Delete!'
         }).then((result) => {
             $.ajax({
-                type: "post",
-                url:"{{ route('category_package_save') }}",
-                data: formdata ? formdata : form.serialize(),
-                processData: false,
-                contentType: false,
+                type: "get",
+                url:"{{ route('category_package_delete') }}",
+                data: {'id':argument},
                 success:function(data){
                     if (data.status == 'sukses') {
-                        if (result.value) {Swal.fire('Saved!','Your file has been Saved.','success')}
+                        if (result.value) {Swal.fire('Deleted!','Your file has been Deleted.','success')}
+                            location.reload();
                     }else if(data.status == 'gagal'){
-                        if (result.value) {Swal.fire('Fail!','your file could not be saved','error')}
+                        if (result.value) {Swal.fire('Fail!','your file could not be Deleted','error')}
                     }
                 }
             });
             
         })
-        
     }
 
 </script>

@@ -16,22 +16,24 @@ class category_packageController extends Controller
         $this->model = new models();
     }
 
-    // public function test($param){
-    //     return $this->model->m_category_package()->get()->where('mcp_id',$param);
-
-    // }
-
-    
-
-    public function category_package(Request $data)
+    public function category_package()
     {
          $data = $this->model->m_category_package()->get();
         return view('admin.master.category_package.category_package', compact('data'));
     }
+
     public function category_package_create()
     {
         return view('admin.master.category_package.category_package_create');
     }
+
+    public function category_package_edit(Request $req)
+    {
+        // return $req->all();
+        return $data = $this->model->m_category_package()->where('mcp_id',$req->id)->with('d_package')->get()->first();
+        return view('admin.master.category_package.category_package_edit',compact('data'));
+    }
+
     public function category_package_save(Request $req)
     {
         // return $req->all();
@@ -54,30 +56,36 @@ class category_packageController extends Controller
         }
     }
 
-    public function category_package_edit($id){
-        // Ojok Dirubah!
-        $data = $this->model->m_category_package()->get()->where('mcp_id',$id);
-        return view('admin.master.category_package.category_package_edit',compact('data'));
-    }
-
     public function category_package_update(Request $req)
     {
-        $simpan = $this->model->m_category_package()->where('mcp_id',$req->mcp_id)->update([
-            'mcp_title'=>$req->mcp_title
-        ]);
-        return Response()->json(['status'=>'sukses']);
-    }
-    
-    public function tes(Request $req){
-        return $req->mcp_id;
+        DB::beginTransaction();
+        try{
+            $simpan = $this->model->m_category_package()->where('mcp_id',$req->id)->update([
+                'mcp_title'=>$req->mcp_title,
+            ]);
+            DB::commit();
+            return Response()->json(['status'=>'sukses']);
+        }
+        catch(\Exception $e){
+            DB::rollback();
+            return Response()->json(['status'=>'gagal','problem'=>$e]);
+        }
     }
 
-    public function category_package_delete($id)
+    public function category_package_delete(Request $req)
     {
-        // $data = $this->model->m_category_package()->get()->where('mcp_id',$id);
-        // $update = $data = $this->model->m_category_package()->get()->where('mcp_id',$id)->update([
-        //     'mcp_title'=>$id->mcp_title
-        // ]);
+       DB::beginTransaction();
+        try {
+            $delete = $this->model->m_category_package()->where('mcp_id',$req->id)->delete();
+            // DB::statement("ALTER TABLE table_name AUTO_INCREMENT = 1");
+            // $max = DB::table('m_category_package')->max('mcp_id') + 1; 
+            DB::statement("ALTER TABLE m_category_package AUTO_INCREMENT = 1");\
+            DB::commit();
+            return Response()->json(['status'=>'sukses']);
+        }catch (\Exception $e) {
+            DB::rollback();
+            return Response()->json(['status'=>'gagal','problem'=>$e]);
+        }
     }
     public function category_package_datatable()
     {

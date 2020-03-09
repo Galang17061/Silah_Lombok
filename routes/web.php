@@ -71,9 +71,6 @@ Route::get('/master/category_package', 'admin\master\category_package\category_p
 Route::get('/master/category_package/create', 'admin\master\category_package\category_packageController@category_package_create')->name('category_package_create');
 Route::get('/master/category_package/edit/{id}', 'admin\master\category_package\category_packageController@category_package_edit')->name('category_package_edit/{id}');
 Route::get('/master/category_package/edit', 'admin\master\category_package\category_packageController@category_package_edit')->name('category_package_edit');
-// Route::get('/tes','admin\master\category_package\category_packageController@tes')->name('tes');
-// Route::get('/master/category_package/delete/{id}', 'admin\master\category_package\category_packageController@category_package_delete')->name('category_package_delete/{id}');
-// Route::get('test/{tes}','admin\master\category_package\category_packageController@test');
 Route::post('/master/category_package/save', 'admin\master\category_package\category_packageController@category_package_save')->name('category_package_save');
 Route::post('/master/category_package/update', 'admin\master\category_package\category_packageController@category_package_update')->name('category_package_update');
 Route::get('/master/category_package/delete', 'admin\master\category_package\category_packageController@category_package_delete')->name('category_package_delete');
@@ -81,10 +78,8 @@ Route::get('/master/category_package/datatable', 'admin\master\category_package\
 
 
 
-// Main Package list
-Route::get('/master/package_list', 'admin\master\package_list\package_listController@package_list')->name('package_list');
-Route::get('/master/package_list/create', 'admin\master\package_list\package_listController@package_list_create')->name('package_list_create');
-Route::post('/master/package_list/save', 'admin\master\package_list\package_listController@package_list_save')->name('package_list_save');
-Route::post('/master/package_list/update', 'admin\master\package_list\package_listController@package_list_update')->name('package_list_update');
-Route::get('/master/package_list/delete', 'admin\master\package_list\package_listController@package_list_delete')->name('package_list_delete');
-Route::get('/master/package_list/datatable', 'admin\master\package_list\package_listController@package_list_datatable')->name('package_list_datatable');
+// Package list
+Route::get('/master/package_list', 'frontend\package\package_listController@package_list')->name('package_list');
+
+// Detail Package
+Route::get('/master/package_detail', 'frontend\package\package_detailController@package_detail')->name('package_detail');

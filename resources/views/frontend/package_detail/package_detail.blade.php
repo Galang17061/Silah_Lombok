@@ -31,7 +31,7 @@
     <div class="container">
         <div class="row align-items-center justify-content-center text-center">
             <div class="col-lg-8 mt-5" data-aos="fade-up">
-                <h1>Sasak - Trawangan - City Tour</h1>
+                <h1>{{$data->dp_title}}</h1>
             </div>
         </div>
     </div>
@@ -43,8 +43,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 blog-content">
-                <h2 class="text-black">Sasak - Trawangan - City Tour</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos laudantium quae, nesciunt aliquid voluptate impedit explicabo, laboriosam, eius voluptatem eos exercitationem neque doloribus dignissimos odit rem iure totam voluptatibus rerum accusamus. Ipsum, cumque illum nulla eos quaerat, earum vero nostrum debitis laboriosam exercitationem rem dolore, pariatur molestiae voluptate doloremque reprehenderit!</p>
+                <h2 class="text-black">{{$data->dp_title}}</h2>
+                <p>{{$data->dp_description}}</p>
 
                 {{-- Begin table --}}
                 <table style="width: 100%" class="custom-style-table">

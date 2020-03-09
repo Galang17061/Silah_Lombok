@@ -23,9 +23,8 @@ class d_package_image extends model
     {
         return 'Y-m-d H:i:s';
     }
-    // public function d_shop_image()
-    // {
-    //     return $this->hasMany('App\model\functions\shop\d_shop_image', 'dsi_shop', 'ds_id');
-    // }
 
+    public function d_package(){
+        $this->belongsTo('App\model\functions\d_package', 'dpd_package', 'dp_id');
+    }
 }

@@ -44,4 +44,8 @@ class d_package extends model
         });
     }
 
+    public function d_package_image(){
+        return $this->hasMany('App\model\functions\d_package_image', 'dpi_package', 'dp_id');
+    }
+
 }

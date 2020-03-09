@@ -31,84 +31,24 @@
     <div class="site-section">
         <div class="container">
             <div class="row">
+                @foreach($data as $element)
                 <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
                     <div class="blog-entry">
-                    <a href="blog-single.html" class="img-link">
-                        <img src="../assets_frontend/images/hero_1.jpg" alt="Image" class="img-fluid">
+                    <a href="{{route('package_detail',['id'=>$element->dp_id])}}" class="img-link">
+                        <img src="{{asset('../storage/app/'.$element->d_package_image[0]->dpi_image)}}" alt="Image" class="img-fluid">
                     </a>
                     <div class="blog-entry-contents">
-                        <h3><a href="#">Consectetur Adipisicing Elit Expedita Beatea</a></h3>
-                        <div class="meta">Posted by <a href="#">Admin</a> In <a href="#">News</a></div>
+                        <h3><a href="#">{{$element->dp_title}}</a></h3>
                     </div>
                     </div>
                 </div>
-                <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-                    <div class="blog-entry">
-                    <a href="blog-single.html" class="img-link">
-                        <img src="../assets_frontend/images/hero_1.jpg" alt="Image" class="img-fluid">
-                    </a>
-                    <div class="blog-entry-contents">
-                        <h3><a href="#">Consectetur Adipisicing Elit Expedita Beatea</a></h3>
-                        <div class="meta">Posted by <a href="#">Admin</a> In <a href="#">News</a></div>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-                    <div class="blog-entry">
-                    <a href="blog-single.html" class="img-link">
-                        <img src="../assets_frontend/images/hero_1.jpg" alt="Image" class="img-fluid">
-                    </a>
-                    <div class="blog-entry-contents">
-                        <h3><a href="#">Consectetur Adipisicing Elit Expedita Beatea</a></h3>
-                        <div class="meta">Posted by <a href="#">Admin</a> In <a href="#">News</a></div>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-                    <div class="blog-entry">
-                    <a href="blog-single.html" class="img-link">
-                        <img src="../assets_frontend/images/hero_1.jpg" alt="Image" class="img-fluid">
-                    </a>
-                    <div class="blog-entry-contents">
-                        <h3><a href="#">Consectetur Adipisicing Elit Expedita Beatea</a></h3>
-                        <div class="meta">Posted by <a href="#">Admin</a> In <a href="#">News</a></div>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-                    <div class="blog-entry">
-                    <a href="blog-single.html" class="img-link">
-                        <img src="../assets_frontend/images/hero_1.jpg" alt="Image" class="img-fluid">
-                    </a>
-                    <div class="blog-entry-contents">
-                        <h3><a href="#">Consectetur Adipisicing Elit Expedita Beatea</a></h3>
-                        <div class="meta">Posted by <a href="#">Admin</a> In <a href="#">News</a></div>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-                    <div class="blog-entry">
-                    <a href="blog-single.html" class="img-link">
-                        <img src="../assets_frontend/images/hero_1.jpg" alt="Image" class="img-fluid">
-                    </a>
-                    <div class="blog-entry-contents">
-                        <h3><a href="#">Consectetur Adipisicing Elit Expedita Beatea</a></h3>
-                        <div class="meta">Posted by <a href="#">Admin</a> In <a href="#">News</a></div>
-                    </div>
-                    </div>
-                </div>
+                @endforeach
                 
             </div>
 
             <div class="row text-center mt-5">
                 <div class="col-12">
                     <a href="#" class="p-3 d-inline-block">1</a>
-                    <a href="#" class="p-3 d-inline-block">2</a>
-                    <span class="p-3 d-inline-block text-black">3</span>
-                    <a href="#" class="p-3 d-inline-block">4</a>
-                    <a href="#" class="p-3 d-inline-block">5</a>
-                </div>
             </div>
         </div>
     </div>

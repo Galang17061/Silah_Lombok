@@ -74,8 +74,9 @@ Route::get('/master/category_package/edit', 'admin\master\category_package\categ
 Route::post('/master/category_package/save', 'admin\master\category_package\category_packageController@category_package_save')->name('category_package_save');
 Route::post('/master/category_package/update', 'admin\master\category_package\category_packageController@category_package_update')->name('category_package_update');
 Route::get('/master/category_package/delete', 'admin\master\category_package\category_packageController@category_package_delete')->name('category_package_delete');
-Route::get('/master/category_package/datatable', 'admin\master\category_package\category_packageController@category_package_datatable')->name('category_package_datatable');
 
+// Adding route
+Route::get('/master/category_package/datatable', 'admin\master\category_package\category_packageController@category_package_datatable')->name('category_package_datatable');
 
 
 // Package list
